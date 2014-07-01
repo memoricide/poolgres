@@ -24,7 +24,8 @@ defmodule Poolgres.Mixfile do
   #   {:mydep, git: "https://github.com/elixir-lang/mydep.git", tag: "0.1"}
   #
   # Type `mix help deps` for more examples and options
-  defp deps do
-    []
-  end
+  defp deps do [
+    {:poolboy,  github: "devinus/poolboy"},
+    {:postgrex, github: "ericmj/postgrex"},
+  ] end
 end

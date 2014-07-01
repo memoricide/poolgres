@@ -26,13 +26,13 @@ defmodule Poolgres.Sup do
                   (_) -> false end)        |>
     hd |> elem(1)
   end
-  def pool_pid(x) when is_binary(x), do: pool_pid(x |> binary_to_existing_atom)
+  def pool_pid(x) when is_binary(x), do: pool_pid(x |> :erlang.binary_to_existing_atom)
 
   defp pool_spec(database: database, hostname: hostname, 
                  username: username, password: password, 
                  port: port,         size: size, 
                  max_overflow: max_overflow) do
-    :poolboy.child_spec({ :local, database |> binary_to_atom },
+    :poolboy.child_spec({ :local, database |> :erlang.binary_to_atom },
                         [ worker_module: Poolgres.Worker,
                           size:          size,
                           max_overflow:  max_overflow],

@@ -1,0 +1,3 @@
+%{"decimal": {:package, "0.2.2"},
+  "poolboy": {:git, "git://github.com/devinus/poolboy.git", "91cf587b6029be696679a4788905de796ec89df3", []},
+  "postgrex": {:git, "git://github.com/ericmj/postgrex.git", "bee65577f3913821ce9410062c10580e039976da", []}}
