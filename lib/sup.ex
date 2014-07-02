@@ -4,6 +4,9 @@ defmodule Poolgres.Sup do
   def start_link(), do: :supervisor.start_link({:local, __MODULE__}, __MODULE__, [])
   def start_link(opts), do: :supervisor.start_link({:local, __MODULE__}, __MODULE__, opts)
 
+  def init([]) do
+    supervise([], strategy: :one_for_one)
+  end
   def init(opts) do
     tree = [
       pool_spec(opts)
