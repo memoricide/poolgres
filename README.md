@@ -1,4 +1,4 @@
 Poolgres
 ========
 
-** TODO: Add description **
+Postgrex meets poolboy.

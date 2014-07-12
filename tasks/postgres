@@ -1,0 +1,6 @@
+if [ ! -d ./.postgres/data ]; then
+  mkdir ".postgres"
+  initdb --locale en_US.UTF-8 -E UTF8 -D './.postgres/data/'
+  createdb poolgres
+fi
+postgres -D ".postgres/data" -p 59999
